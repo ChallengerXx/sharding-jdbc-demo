@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!-- 此处与接口类地址对应 -->
-<mapper namespace="dao.mapper.ApplicationPropertyMapper">
+<mapper namespace="com.xx.dao.mapper.ApplicationPropertyMapper">
     <!-- 此处与接口方法名对应 指定参数类型与返回结果类型-->
-    <select id="findAll" parameterType="java.lang.String" resultType="dao.entity.ApplicationProperty">
+    <select id="findAll" parameterType="java.lang.String" resultType="com.xx.dao.entity.ApplicationProperty">
         select * from application_property;
     </select>
 </mapper>

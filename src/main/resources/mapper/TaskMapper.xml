@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!-- 此处与接口类地址对应 -->
-<mapper namespace="dao.mapper.TaskMapper">
+<mapper namespace="com.xx.dao.mapper.TaskMapper">
+    <resultMap id="baseResultMap" type="com.xx.dao.entity.Task">
+        <result column="task_no" jdbcType="VARCHAR" property="taskNo"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+        <result column="result" jdbcType="VARCHAR" property="result"/>
+    </resultMap>
+
     <!-- 此处与接口方法名对应 指定参数类型与返回结果类型-->
-    <select id="findByTaskNo" parameterType="java.lang.String" resultType="dao.entity.Task">
+    <select id="findByTaskNo" parameterType="java.lang.String" resultMap="baseResultMap">
         select * from task where task_no = #{taskNo}
     </select>
+
+    <insert id="insert" parameterType="com.xx.dao.entity.Task">
+        insert into task (task_no, status, result) values (#{taskNo}, #{status}, #{result})
+    </insert>
 </mapper>
