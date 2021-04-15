@@ -1,5 +1,6 @@
 package com.xx.controller;
 
+import com.xx.annotation.MethodDesc;
 import com.xx.dao.entity.Task;
 import com.xx.dao.mapper.TaskMapper;
 import com.xx.dao.mapper.UserMapper;
@@ -22,6 +23,7 @@ public class HelloController {
         return "success";
     }
 
+    @MethodDesc("根据任务号查询任务记录")
     @RequestMapping("/findTaskByTaskNo")
     public Task findTaskByTaskNo(@RequestBody Task request){
         Task task = taskMapper.findByTaskNo(request.getTaskNo());
